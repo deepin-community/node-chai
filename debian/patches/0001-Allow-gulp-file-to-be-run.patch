@@ -1,0 +1,44 @@
+From: =?utf-8?q?Bastien_Roucari=C3=A8s?= <rouca@debian.org>
+Date: Wed, 3 Nov 2021 16:08:47 +0000
+Subject: Allow gulp file to be run
+
+Debian do not include gulp-uglify work arround
+
+Forwarded: not-needed
+---
+ fclone/gulpfile.js | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/fclone/gulpfile.js b/fclone/gulpfile.js
+index 5fe962a..ab816fb 100644
+--- a/fclone/gulpfile.js
++++ b/fclone/gulpfile.js
+@@ -3,7 +3,7 @@ var gulp = require('gulp')
+ var wrap = require('gulp-wrap')
+ var rename = require('gulp-rename')
+ var babel = require('gulp-babel')
+-var uglify = require('gulp-uglify')
++//var uglify = require('gulp-uglify')
+ 
+ var umd = [
+ "(function (root, factory) {",
+@@ -24,14 +24,16 @@ var umd = [
+ 
+ gulp.task('default', function() {
+   return gulp.src(['src/fclone.js'])
+-  .pipe(babel({presets: ['es2015']}))
++  .pipe(babel())
+   .pipe(wrap(umd))
+   .pipe(gulp.dest('dist'))
+-  .pipe(uglify())
++  //.pipe(uglify())
+   .pipe(rename('fclone.min.js'))
+   .pipe(gulp.dest('dist'))
+ })
+ 
++/*
+ gulp.task('watch', ['default'], function() {
+   gulp.watch('src/*.js', ['default'])
+ })
++*/
+\ No newline at end of file

@@ -1,0 +1,2 @@
+# False positives
+embedded-javascript-library usr/share/nodejs/chai/lib/chai.js please use libjs-chai
