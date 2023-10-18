@@ -4,7 +4,7 @@ Upstream-Contact: https://github.com/chaijs/chai/issues
 Source: https://chaijs.com
  https://registry.npmjs.org/@types/chai
  https://github.com/soyuka/fclone/tags
-Files-Excluded: 
+Files-Excluded:
    chai.js
 Files-Excluded-fclone: dist/*
 
@@ -16,17 +16,22 @@ Copyright: 2017 Chai.js Assertion Library
   2016-2018 John Firebaugh <john.firebaugh@gmail.com>
 License: Expat
 
-Files: fclone/*
-Copyright: 2016 Antoine Bluchet <soyuka@gmail.com>
-License: Expat
-
 Files: chai-exclude/*
-Copyright: 2017-, Saugat Acharya
+Copyright: 2017-present, Saugat Acharya
 License: Expat
 
 Files: debian/*
 Copyright: 2016 Sruthi Chandran <srud@disroot.org>
  2018 Bastien Roucariès <rouca@debian.org>
+ 2022 Yadd <yadd@debian.org>
+License: Expat
+
+Files: fclone/*
+Copyright: 2016 Antoine Bluchet <soyuka@gmail.com>
+License: Expat
+
+Files: loupe/*
+Copyright: 2011-2013 Jake Luer <jake@alogicalparadox.com>
 License: Expat
 
 Files: types-chai/*

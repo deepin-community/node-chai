@@ -7,22 +7,27 @@ Uploaders:
 Section: javascript
 Testsuite: autopkgtest-pkg-nodejs
 Priority: optional
-Build-Depends:
- debhelper-compat (= 13)
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , gulp
  , mocha
  , node-assertion-error
+ , node-browserify
  , node-check-error
  , node-deep-eql
  , node-get-func-name
- , node-pathval
- , node-type-detect
- , dh-sequence-nodejs
- , webpack (>= 4~)
- , node-gulp
- , node-gulp-wrap
  , node-gulp-babel
  , node-gulp-rename
-Standards-Version: 4.6.0
+ , node-gulp-wrap
+ , node-pathval
+ , node-rollup-plugin-babel
+ , node-rollup-plugin-commonjs
+ , node-rollup-plugin-node-resolve
+ , node-type-detect
+ , rollup
+ , terser
+ , webpack (>= 4~)
+Standards-Version: 4.6.1
 Vcs-Browser: https://salsa.debian.org/js-team/node-chai
 Vcs-Git: https://salsa.debian.org/js-team/node-chai.git
 Homepage: https://chaijs.com
@@ -30,8 +35,7 @@ Rules-Requires-Root: no
 
 Package: chai
 Architecture: all
-Depends:
- ${misc:Depends}
+Depends: ${misc:Depends}
  , node-assertion-error
  , node-check-error
  , node-deep-eql
@@ -63,10 +67,8 @@ Description: assertion library for Node.js
 Package: libjs-chai
 Architecture: all
 Multi-Arch: foreign
-Depends:
- ${misc:Depends}
-Recommends:
- javascript-common
+Depends: ${misc:Depends}
+Recommends: javascript-common
 Description: assertion library for the browser
  Chai is a BDD / TDD assertion library for Node.js and the
  browser that can be delightfully paired with any javascript testing framework.

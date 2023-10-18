@@ -2,18 +2,16 @@ From: =?utf-8?q?Bastien_Roucari=C3=A8s?= <rouca@debian.org>
 Date: Wed, 3 Nov 2021 16:08:47 +0000
 Subject: Allow gulp file to be run
 
-Debian do not include gulp-uglify work arround
+Debian do not include gulp-uglify work around
 
 Forwarded: not-needed
 ---
  fclone/gulpfile.js | 8 +++++---
  1 file changed, 5 insertions(+), 3 deletions(-)
 
-diff --git a/fclone/gulpfile.js b/fclone/gulpfile.js
-index 5fe962a..ab816fb 100644
 --- a/fclone/gulpfile.js
 +++ b/fclone/gulpfile.js
-@@ -3,7 +3,7 @@ var gulp = require('gulp')
+@@ -3,7 +3,7 @@
  var wrap = require('gulp-wrap')
  var rename = require('gulp-rename')
  var babel = require('gulp-babel')
@@ -22,7 +20,7 @@ index 5fe962a..ab816fb 100644
  
  var umd = [
  "(function (root, factory) {",
-@@ -24,14 +24,16 @@ var umd = [
+@@ -24,14 +24,16 @@
  
  gulp.task('default', function() {
    return gulp.src(['src/fclone.js'])

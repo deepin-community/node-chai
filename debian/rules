@@ -13,8 +13,11 @@ CHAI_SRC=$(shell find lib -name "*.js" -type f | LC_ALL=C sort)
 chai.js: index.js $(CHAI_SRC)
 	$(WEBPACK)  --config debian/webpack.config.js
 
-override_dh_auto_build: chai.js
-	cd fclone && gulp
+override_dh_auto_build:
+	cd loupe && sh -e ../debian/nodejs/loupe/build
+	$(MAKE) chai.js
+	terser -o chai.min.js chai.js
+	cd fclone && sh -e ../debian/nodejs/fclone/build
 
 override_dh_auto_install:
 	dh_auto_install --buildsystem=nodejs
