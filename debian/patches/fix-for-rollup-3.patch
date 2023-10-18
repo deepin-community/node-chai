@@ -1,0 +1,27 @@
+Description: fix for rollup 3
+Author: Yadd <yadd@debian.org>
+Bug-Debian: https://bugs.debian.org/1022595
+Forwarded: not-needed
+Last-Update: 2022-10-25
+
+--- a/loupe/rollup.conf.js
++++ b/loupe/rollup.conf.js
+@@ -1,6 +1,6 @@
+-import common from '@rollup/plugin-commonjs'
+-import resolve from '@rollup/plugin-node-resolve'
+-import transform from '@rollup/plugin-babel'
++const common = require('@rollup/plugin-commonjs')
++const resolve = require('@rollup/plugin-node-resolve').nodeResolve
++const transform = require('@rollup/plugin-babel')
+ 
+ const plugins = [
+   common(),
+@@ -21,7 +21,7 @@
+     ],
+   }),
+ ]
+-export default [
++module.exports = [
+   {
+     input: 'index.js',
+     output: {

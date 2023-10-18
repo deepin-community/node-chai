@@ -1,0 +1,28 @@
+Description: Explicitly declare registers
+Author: Yadd <yadd@debian.org>
+Bug-Debian: https://bugs.debian.org/1005538
+ https://bugs.debian.org/1008140
+Forwarded: no
+Last-Update: 2022-03-23
+
+--- a/package.json
++++ b/package.json
+@@ -31,6 +31,18 @@
+       "require": "./index.js",
+       "import": "./index.mjs"
+     },
++    "./register-assert": {
++      "import": "./register-assert.js",
++      "require": "./register-assert.js"
++    },
++    "./register-expect": {
++      "import": "./register-expect.js",
++      "require": "./register-expect.js"
++    },
++    "./register-should": {
++      "import": "./register-should.js",
++      "require": "./register-should.js"
++    },
+     "./*": "./*"
+   },
+   "scripts": {
